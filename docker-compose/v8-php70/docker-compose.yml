@@ -1,0 +1,41 @@
+# Concrete5 docker composer
+
+version: "3"
+services:
+  # Apache 2 + PHP 7.0 + Concrete5 8.0 (v8-php70)
+  app:
+    build: ./app
+    image: concrete5:v8-php70
+    container_name: cc5_app
+    networks:
+      - cc5_net
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 80:80
+    volumes:
+      - ./app/config:/etc/apache2/conf.d:ro
+      - ./app/data:/var/www/html
+      - ./app/logs:/var/log/apache2
+  # MySQL
+  db:
+    image: mysql:5.6 
+    container_name: cc5_db
+    networks:
+      - cc5_net
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: concrete
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: concrete
+      TZ: Asia/Tokyo
+    ports:
+      - 13306:3306
+    volumes:
+      - ./db/config/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      - ./db/init/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+      - ./db/data:/var/lib/mysql
+
+networks:
+  cc5_net:
+    driver: bridge
