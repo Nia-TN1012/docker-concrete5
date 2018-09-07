@@ -1,5 +1,5 @@
 # NOTE
-Now editing this description. Please wait for a while.
+Now editing this description. Please wait for a while.
 
 # Concrete5 (Ver. 8.x) for Docker
 There are Dockerfile for building **Concrete5** web container and `docker-compose` for **Concrete5** app.
