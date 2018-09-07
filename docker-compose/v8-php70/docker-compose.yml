@@ -5,7 +5,7 @@ services:
   # Apache 2 + PHP 7.0 + Concrete5 8.0 (v8-php70)
   app:
     build: ./app
-    image: concrete5:v8-php70
+    image: niatn1012/concrete5:v8-php70
     container_name: cc5_app
     networks:
       - cc5_net
