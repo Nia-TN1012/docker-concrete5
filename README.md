@@ -22,8 +22,8 @@ docker run --name cc5_db -p 3306:3306 -d \
     -e MYSQL_ROOT_PASSWORD=password \
     # Set the database, user, and password to use in this container as environment variables.
     -e MYSQL_DATABASE=concrete5 \
-    -e MYSQL_DATABASE_USER=cc5_user \
-    -e MYSQL_USER_PASSWORD=cc5_pass \
+    -e MYSQL_USER=cc5_user \
+    -e MYSQL_PASSWORD=cc5_pass \
     mysql:5.6
 ```
 
