@@ -7,7 +7,7 @@ FROM debian:stretch-slim
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
-# Updates packages and installs;
+# Update packages and installs;
 # * apache2
 # * php
 #   * php-mysql     (MySQL)
@@ -32,7 +32,7 @@ RUN apt-get update \
         unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Sets enviorment vars.
+# Set enviorment variables.
 ENV APACHE_RUN_USER     www-data
 ENV APACHE_RUN_GROUP    www-data
 ENV APACHE_PID_FILE     /var/run/apache2.pid
@@ -49,9 +49,9 @@ RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/vie
     && mv /usr/src/concrete* /usr/src/concrete5 \
     && chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /usr/src/concrete5
 
-# Copy php.ini for Concrete5.
+# Add php.ini for Concrete5.
 ADD php.ini /etc/php/7.0/apache2/php.ini
-# Backup Apache configration.
+# Backup Apache and PHP configration files.
 RUN mkdir -p /tmp/conf_backup \
     && cp /etc/php/7.0/apache2/php.ini /tmp/conf_backup/ \
     && cp /etc/apache2/sites-available/000-default.conf /tmp/conf_backup/ \
@@ -61,10 +61,10 @@ RUN mkdir -p /tmp/conf_backup \
 
 WORKDIR /var/www/html
 
-# Sets entrypoint.
+# Set entrypoint.
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 
-# Exposes 80 (HTTP) port.
+# Expose 80 (HTTP) port.
 EXPOSE 80
