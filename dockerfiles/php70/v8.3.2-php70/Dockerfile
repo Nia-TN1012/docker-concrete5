@@ -1,5 +1,5 @@
 #
-# Concrete5
+# Concrete5 v8.3.2
 # Debian stretch-slim + Apache2 + PHP7.0
 #
 
@@ -9,7 +9,7 @@ LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
 # Update packages and installs;
 # * apache2
-# * php
+# * php7.0
 #   * php-mysql     (MySQL)
 #   * php-xml       (DOM, SimpleXML)
 #   * php-mbstring  (Mbstring)
@@ -41,7 +41,7 @@ ENV APACHE_LOG_DIR      /var/log/apache2
 ENV APACHE_LOCK_DIR     /var/lock/apache2
 
 # Download Concrete5 source files.
-ARG C5REV=105022
+ARG C5REV=100595
 RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/view/${C5REV}/ \
     && rm -f /var/www/html/index.html \
     && unzip -q /tmp/concrete5.zip -d /usr/src/ \
