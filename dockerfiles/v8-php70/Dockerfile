@@ -33,14 +33,14 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Sets enviorment vars.
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_PID_FILE /var/run/apache2.pid
-ENV APACHE_RUN_DIR /var/run/apache2
-ENV APACHE_LOG_DIR /var/log/apache2
-ENV APACHE_LOCK_DIR /var/lock/apache2
+ENV APACHE_RUN_USER     www-data
+ENV APACHE_RUN_GROUP    www-data
+ENV APACHE_PID_FILE     /var/run/apache2.pid
+ENV APACHE_RUN_DIR      /var/run/apache2
+ENV APACHE_LOG_DIR      /var/log/apache2
+ENV APACHE_LOCK_DIR     /var/lock/apache2
 
-# Download Concrete5
+# Download Concrete5 source files.
 ARG C5REV=105022
 RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/view/${C5REV}/ \
     && rm -f /var/www/html/index.html \
@@ -48,6 +48,16 @@ RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/vie
     && rm -f /tmp/concrete5.zip \
     && mv /usr/src/concrete* /usr/src/concrete5 \
     && chown -R ${APACHE_RUN_USER}:${APACHE_RUN_GROUP} /usr/src/concrete5
+
+# Copy php.ini for Concrete5.
+ADD php.ini /etc/php/7.0/apache2/php.ini
+# Backup Apache configration.
+RUN mkdir -p /tmp/conf_backup \
+    && cp /etc/php/7.0/apache2/php.ini /tmp/conf_backup/ \
+    && cp /etc/apache2/sites-available/000-default.conf /tmp/conf_backup/ \
+    && echo "cp -i /tmp/conf_backup/php.ini /etc/php/7.0/apache2/" > /tmp/conf_backup/restore_conf.sh \
+    && echo "cp -i /tmp/conf_backup/000-default.conf /etc/apache2/sites-available/" >> /tmp/conf_backup/restore_conf.sh \
+    && chmod +x /tmp/conf_backup/restore_conf.sh
 
 WORKDIR /var/www/html
 
