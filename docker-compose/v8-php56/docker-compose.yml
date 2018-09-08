@@ -2,9 +2,9 @@
 
 version: "3"
 services:
-  # Apache 2 + PHP 7.0 + Concrete5 8.x (v8-php70)
+  # Apache 2 + PHP 5.6 + Concrete5 8.x (v8-php70)
   app:
-    image: niatn1012/concrete5/v8-php70
+    image: cc5v842php56
     container_name: cc5_app
     networks:
       - cc5_net
@@ -17,7 +17,7 @@ services:
       # Note: To initialize the configuration files, empty the contents of '000-default.conf', 'php.ini' 
       #       and execute `docker-compose restart` command.
       - ./app/config/000-default.conf:/etc/apache2/sites-avaolable/000-default.conf
-      - ./app/config/php.ini:/etc/php/7.0/apache2/php.ini
+      - ./app/config/php.ini:/etc/php/5.6/apache2/php.ini
       # Concrete5 source files
       - ./app/data:/var/www/html
       # Apache logs
