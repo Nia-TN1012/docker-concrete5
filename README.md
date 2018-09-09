@@ -131,7 +131,7 @@ Enter the site information and press the "Install Concrete5" button.
 |Administrator Email Address|Enter the email address of the administrator account.|
 |Administrator Password / Comfirm Password|Enter the password of the administrator account.|
 |Starting Point|Select a blank theme or Elemental theme.|
-|Server|In the case of Quick Start A, enter the name specified by the `--link` option when creating the Concrete5 container. In the case of Quick Start B, enter the MySQL container name set in the `docker-compose.yml`.|
+|Server|In the case of Quick Start A, enter the name specified by the `--link` option when creating the Concrete5 container. In the case of Quick Start B, enter the MySQL container name set in the `docker-compose.yml`.|
 |MySQL Username / MySQL Password|Enter the user name and password set in the environment variable `MYSQL_USER` and `MYSQL_PASSWORD` of the MySQL container.|
 |Database Name|Enter the database name set in the environment variable `MYSQL_DATABASE` of the MySQL container.|
 
