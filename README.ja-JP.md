@@ -1,6 +1,6 @@
 ## Docker用Concrete5 (Ver. 8.x)
 
-このリポジトリは、オープンソースのCMS **Concrete5**（バージョン8.x）アプリケーションコンテナのDockerイメージです。
+このリポジトリは、オープンソースのCMS **Concrete5**（バージョン8.x）アプリケーションコンテナのDockerイメージです。
 
 MySQLコンテナ（MariaDBでもOK）と組み合わせてご利用ください。
 
@@ -63,7 +63,7 @@ docker run --name cc5_db -p 3306:3306 -d \
     mysql:5.6
 ```
 
-次に、`docker run`コマンドを実行して、Concrete5コンテナを作成し、起動します。その際に、`--link`オプションで先ほど起動しておいたMySQLコンテナとリンクさせます。
+次に、`docker run`コマンドを実行して、Concrete5コンテナを作成し、起動します。その際に、`--link`オプションで先ほど起動しておいたMySQLコンテナとリンクさせます。
 
 ```bash
 docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
@@ -71,12 +71,12 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 
 ### B. `docker-compose`を使って、Concrete5コンテナとMySQLコンテナをまとめて起動する（オススメ）
 
-GitHubにて、docker-compose用のzipファイルを置いています。お好きな方をダウンロードし、解凍してお使いください。
+GitHubにて、docker-compose用のzipファイルを置いています。お好きな方をダウンロードし、解凍してお使いください。
 
 * [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.zip)
 
-解凍したdocker-composeディレクトリに移動し、`docker-compose up`コマンドを実行して、Concrete5コンテナとMySQLコンテナを作成し、起動します。
+解凍したdocker-composeディレクトリに移動し、`docker-compose up`コマンドを実行して、Concrete5コンテナとMySQLコンテナを作成し、起動します。
 
 ```bash
 docker-compose up -d
@@ -93,7 +93,7 @@ docker-compose up -d
 > ...
 > ```
 
-コンテナをまとめて停止する時は、`docker-compose stop`コマンドを、まとめて起動する時は、`docker-compose start`コマンドを実行します。
+コンテナをまとめて停止する時は、`docker-compose stop`コマンドを、まとめて起動する時は、`docker-compose start`コマンドを実行します。
 
 ```bash
 docker-compose stop
@@ -101,7 +101,7 @@ docker-compose stop
 docker-compose start
 ```
 
-コンテナをまとめて削除する時は、`docker-compose down`コマンドを実行します。
+コンテナをまとめて削除する時は、`docker-compose down`コマンドを実行します。
 
 ```bash
 docker-compose down
@@ -131,7 +131,7 @@ docker-compose down
 |管理者のメールアドレス|管理者アカウントのメールアドレスを入力します。|
 |管理者パスワード・パスワード確認|管理者アカウントのパスワードを入力します。|
 |スターティングポイント|空白のテーマかElementalテーマを選択します。|
-|サーバー|クイックスタートのAの場合、Concrete5コンテナ作成時に`--link`オプションで指定した名前を、クイックスタートのBの場合、`docker-compose.yml`で設定したMySQLコンテナの名前を入れます。|
+|サーバー|クイックスタートのAの場合、Concrete5コンテナ作成時に`--link`オプションで指定した名前を、クイックスタートのBの場合、`docker-compose.yml`で設定したMySQLコンテナの名前を入れます。|
 |MySQLユーザー名・MySQLパスワード|MySQLコンテナの環境変数`MYSQL_USER`及び`MYSQL_PASSWORD`に設定したユーザー名、パスワードを入れます。|
 |データベース名|MySQLコンテナの環境変数`MYSQL_DATABASE`に設定したデータベース名を入れます。|
 
