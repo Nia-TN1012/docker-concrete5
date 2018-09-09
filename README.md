@@ -1,12 +1,14 @@
-## NOTE
-Now editing this description. Please wait for a while.
-
 ## Concrete5 (Ver. 8.x) for Docker
-There are Dockerfile for building **Concrete5** web container and `docker-compose` for **Concrete5** app.
+
+This repository is a Docker image of an open source CMS **Concrete5** (version 8.x) application container.
+
+Please use in conjunction with the MySQL container (it is also possible with MariaDB).
 
 ## Supported tags and respective `Dockerfile` links
 
-### Apache2 + PHP 7
+> The base image `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+
+### Apache2 + PHP 7.0
 
 |Docker tag|Concrete5|Main middleware|Dockerfile link|
 |---|---|---|---|
@@ -24,7 +26,7 @@ There are Dockerfile for building **Concrete5** web container and `docker-compos
 |`v8.0.1-php70`, `v8.0.1`|Ver. 8.0.1|Apache2, PHP7.0|[(v8.0.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.1-php70)|
 |`v8.0.0-php70`, `v8.0.0`|Ver. 8.0.0|Apache2, PHP7.0|[(v8.0.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.0-php70)|
 
-### Apache2 + PHP 5
+### Apache2 + PHP 5.6
 
 |Docker tag|Concrete5|Main middleware|Dockerfile link|
 |---|---|---|---|
@@ -44,63 +46,108 @@ There are Dockerfile for building **Concrete5** web container and `docker-compos
 
 ## Quick Start
 
-### Run **Concrete5** and link with the created MySQL container
+### A. Launch the **Concrete5** container by linking it with the created MySQL container
 
-Execute `docker run` command and run one MySQL container.
+First, execute `docker run` command to create a MySQL container and start it.
 
-> Concrete5 (Ver. 8.x) requires **MySQL 5.1.5** or higher. It's possible to substitute **MariaDB** for MySQL.
+> Concrete5 (Ver. 8.x) requires **MySQL 5.1.5** or later, or **MariaDB**.
 
 ```bash
 docker run --name cc5_db -p 3306:3306 -d \
     -e MYSQL_ROOT_PASSWORD=password \
-    # Set the database, user, and password to use in this container as environment variables.
+    # Set the database name, user, and password to be used by Concrete5.
+    # After starting the container, please grant all privileges with the GRANT command to the user set to MYSQL_USER.
     -e MYSQL_DATABASE=concrete5 \
     -e MYSQL_USER=cc5_user \
     -e MYSQL_PASSWORD=cc5_pass \
     mysql:5.6
 ```
 
-Execute `docker run` command and run Concrete5 container.  
-
+Next, execute `docker run` command to create a Concrete5 container and start it. In doing so, link it with the MySQL container that you started with `--link` Option.
 
 ```bash
 docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 ```
 
-### Run **Concrete5** with `docker-compose`
+### B. Using `docker-compose` to start up Concrete5 container and MySQL container at once (recommended)
 
-[docker-compose](https://github.com/Nia-TN1012/docker-concrete5/tree/master/docker-compose/)
+The docker-compose zip file is in GitHub. Download and unzip it.
 
-To create Concrete5 and MySQL containers, run `docker-compose up` command.
+* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.zip)
+* [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.zip)
+
+Go to the decompressed docker-compose directory and execute `docker-compose up` command to create the Concrete5 container and MySQL container and start them.
 
 ```bash
-# On the directory where downloaded docker-compose.yml is located ...
-
 docker-compose up -d
 ```
 
+>It will take some time to copy a complete set of Concrete5 source files to `/var/www/html` in the Concrete5 container at initial startup. When execute the `docker-compose logs` command, if "OK!" Appears in the output from the Concrete5 container, it is ready.
+>
+> ```bash
+> docker-compose logs | grep cc5_app
+> ...
+> cc5_app | Starting ...
+> cc5_app | Initialized!
+> cc5_app | OK!
+> ...
+> ```
 
+To stop the containers at once, execute `docker-compose stop` command, To activate them, execute `docker-compose start` command.
 
 ```bash
-docker-compose logs
-...
-cc5_app | Starting ...
-cc5_app | Initialized!
-...
-```
-
-
-
-```bash
-# Run Concrete5 and MySQL containers.
-docker-compose start
-
-# Stop Concrete5 and MySQL containers.
 docker-compose stop
+
+docker-compose start
 ```
 
+To remove containers, execute `docker-compose down` command.
+
 ```bash
-# Remove Concrete5 and MySQL containers.
 docker-compose down
 ```
 
+> Files on the host mounted on the container's volume will not be deleted and will remain.
+
+## Install Concrete5
+
+Access `localhost` on the browser.
+
+From the middle drop-down list, select the language you want to use.
+
+![install1](https://raw.githubusercontent.com/Nia-TN1012/docker-concrete5/master/readme-resources/en-us/install1.png)
+
+On the Testting Enviorment screen, confirm that a check mark is displayed for all items, and press the "Continue to Installation" button.
+
+![install2](https://raw.githubusercontent.com/Nia-TN1012/docker-concrete5/master/readme-resources/en-us/install2.png)
+
+Enter the site information and press the "Install Concrete5" button.
+
+![install3](https://raw.githubusercontent.com/Nia-TN1012/docker-concrete5/master/readme-resources/en-us/install3.png)
+
+|Item|Description|
+|---|---|
+|Name|Enter the site name.|
+|Administrator Email Address|Enter the email address of the administrator account.|
+|Administrator Password / Comfirm Password|Enter the password of the administrator account.|
+|Starting Point|Select a blank theme or Elemental theme.|
+|Server|In the case of Quick Start A, enter the name specified by the `--link` option when creating the Concrete5 container. In the case of Quick Start B, enter the MySQL container name set in the `docker-compose.yml`.|
+|MySQL Username / MySQL Password|Enter the user name and password set in the environment variable `MYSQL_USER` and `MYSQL_PASSWORD` of the MySQL container.|
+|Database Name|Enter the database name set in the environment variable `MYSQL_DATABASE` of the MySQL container.|
+
+Wait for the installation to complete.
+
+![install4](https://raw.githubusercontent.com/Nia-TN1012/docker-concrete5/master/readme-resources/en-us/install4.png)
+
+This completes the installation of Concrete5!
+
+![install5](https://raw.githubusercontent.com/Nia-TN1012/docker-concrete5/master/readme-resources/en-us/install5.png)
+
+## Legal Disclaimer
+
+The author and Chronoir.net accept no any responsibility for any obstacles or damages caused by using this Dokcer image and docker-compose. Please be understanding of this beforehand.
+
+## Release Notes
+
+* 2018/09/10: Release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.
+* 2018/09/08: Created beta version
