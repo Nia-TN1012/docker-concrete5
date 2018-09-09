@@ -4,7 +4,7 @@ version: "3"
 services:
   # Apache 2 + PHP 5.6 + Concrete5 8.x (v8-php70)
   app:
-    image: cc5v842php56
+    image: niatn1012/concrete5:v8-php56
     container_name: cc5_app
     networks:
       - cc5_net
@@ -38,7 +38,7 @@ services:
       MYSQL_PASSWORD: cc5_pass
       TZ: Asia/Tokyo
     ports:
-      - 13306:3306
+      - 3306:3306
     volumes:
       # Configration file
       - ./db/config/my.cnf:/etc/mysql/conf.d/my.cnf:ro
