@@ -1,8 +1,10 @@
 ## Concrete5 (Ver. 8.x) for Docker
 
-This repository is a Docker image of an open source CMS **Concrete5** (version 8.x) application container.
+This repository is a Docker image of an open source CMS [**Concrete5**](https://www.concrete5.org/) (version 8.x) application container.
 
 Please use in conjunction with the MySQL container (it is also possible with MariaDB).
+
+[![Concrete5-logo](https://concrete5-japan.org/files/4413/8347/6810/concrete5_japan_banner.gif)](https://www.concrete5.org/)
 
 ## Supported tags and respective `Dockerfile` links
 
@@ -145,9 +147,10 @@ This completes the installation of Concrete5!
 
 ## Legal Disclaimer
 
-The author and Chronoir.net accept no any responsibility for any obstacles or damages caused by using this Dokcer image and docker-compose. Please be understanding of this beforehand.
+The author and Chronoir.net accept no any responsibility for any obstacles or damages caused by using this Dokcer image and docker-compose.
+Please be understanding of this beforehand.
 
 ## Release Notes
 
-* 2018/09/10: Release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.
+* 2018/09/10: First release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.
 * 2018/09/08: Created beta version

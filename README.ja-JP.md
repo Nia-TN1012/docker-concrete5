@@ -1,8 +1,10 @@
 ## Docker用Concrete5 (Ver. 8.x)
 
-このリポジトリは、オープンソースのCMS **Concrete5**（バージョン8.x）アプリケーションコンテナのDockerイメージです。
+このリポジトリは、オープンソースのCMS [**Concrete5**](https://concrete5-japan.org/)（バージョン8.x）アプリケーションコンテナのDockerイメージです。
 
 MySQLコンテナ（MariaDBでもOK）と組み合わせてご利用ください。
+
+[![Concrete5-logo](https://concrete5-japan.org/files/4413/8347/6810/concrete5_japan_banner.gif)](https://concrete5-japan.org/)
 
 ## サポートされるタグと`Dockerfile`のリンク一覧
 
@@ -146,8 +148,9 @@ docker-compose down
 ## 免責事項
 
 このDockerイメージやdocker-composeなどを利用したことにより生じたいかなるトラブル・損害において、作者及びChronoir.netは一切の責任を負いかねます。
+あらかじめご了承ください。
 
 ## リリースノート
 
-* 2018/09/10: 正式版リリース。同一のミドルウェアのインストール部分を[独立したDockerイメージとして共通化](https://github.com/Nia-TN1012/docker-apache-php-cc5)しました。docker-compose側の一部ファイルを修正しました。
+* 2018/09/10: 初版リリース。同一のミドルウェアのインストール部分を[独立したDockerイメージとして共通化](https://github.com/Nia-TN1012/docker-apache-php-cc5)しました。docker-compose側の一部ファイルを修正しました。
 * 2018/09/08: βバージョン作成
