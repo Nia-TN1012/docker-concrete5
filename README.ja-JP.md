@@ -81,7 +81,7 @@ GitHubにて、docker-compose用のzipファイルを置いています。お好
 * [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70.ja-JP/concrete5-v8-php70-docker-compose.ja-JP.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56.ja-JP/concrete5-v8-php56-docker-compose.ja-JP.zip)
 
-> コンテナ名やDockerネットワーク名、MySQLユーザー名やパスワードなどは必要に応じて変更してください。
+> `docker-compose.yml`にある、コンテナ名やDockerネットワーク名、MySQLユーザー名やパスワードなどは必要に応じて変更してください。
 
 解凍したdocker-composeディレクトリに移動し、`docker-compose up`コマンドを実行して、Concrete5コンテナとMySQLコンテナを作成し、起動します。
 
