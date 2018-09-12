@@ -158,6 +158,7 @@ Please be understanding of this beforehand.
 
 ## Release Notes
 
-* 2018/09/12: [All `php70`] Rebuilt the images because fix base image `niatn1012/apache-php-cc5`.
+* 2018/09/12: [All][BugFix] Corrected the dokcer entry-point shell scripts.
+* 2018/09/12: [All `php70`][BugFix] Rebuilt the images because fix base image `niatn1012/apache-php-cc5`.
 * 2018/09/10: First release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.
 * 2018/09/08: Created beta version

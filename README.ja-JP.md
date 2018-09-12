@@ -157,6 +157,7 @@ docker-compose down
 
 ## リリースノート
 
-* 2018/09/12: [`php70`全て] `niatn1012/apache-php-cc5`の修正に伴い、Dockerイメージを再ビルドしました。
+* 2018/09/12: [全て][バグ修正] Dockerのエントリーポイントのシェルスクリプトを修正しました。
+* 2018/09/12: [`php70`全て][バグ修正] `niatn1012/apache-php-cc5`の修正に伴い、Dockerイメージを再ビルドしました。
 * 2018/09/10: 初版リリース。同一のミドルウェアのインストール部分を[`niatn1012/apache-php-cc5`](https://github.com/Nia-TN1012/docker-apache-php-cc5)として共通化しました。docker-compose側の一部ファイルを修正しました。
 * 2018/09/08: βバージョン作成
