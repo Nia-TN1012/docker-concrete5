@@ -6,6 +6,10 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 
 [![Concrete5-logo](https://concrete5-japan.org/files/4413/8347/6810/concrete5_japan_banner.gif)](https://www.concrete5.org/)
 
+
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
+
 ## Supported tags and respective `Dockerfile` links
 
 > The base image `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
@@ -77,6 +81,8 @@ The docker-compose zip file is in GitHub. Download and unzip it.
 
 * [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.zip)
+
+> Please change container name, Docker network name, MySQL user name and password, etc. set in `docker-compose.yml` as necessary.
 
 Go to the decompressed docker-compose directory and execute `docker-compose up` command to create the Concrete5 container and MySQL container and start them.
 
@@ -152,5 +158,6 @@ Please be understanding of this beforehand.
 
 ## Release Notes
 
+* 2018/09/12: [All `php70`] Rebuilt the images because fix base image `niatn1012/apache-php-cc5`.
 * 2018/09/10: First release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.
 * 2018/09/08: Created beta version
