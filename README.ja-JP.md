@@ -78,8 +78,8 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 
 GitHubにて、docker-compose用のzipファイルを置いています。お好きな方をダウンロードし、解凍してお使いください。
 
-* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.ja-JP.zip)
-* [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.ja-JP.zip)
+* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70.ja-JP/concrete5-v8-php70-docker-compose.ja-JP.zip)
+* [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56.ja-JP/concrete5-v8-php56-docker-compose.ja-JP.zip)
 
 > コンテナ名やDockerネットワーク名、MySQLユーザー名やパスワードなどは必要に応じて変更してください。
 
