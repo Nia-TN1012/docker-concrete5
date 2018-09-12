@@ -9,10 +9,10 @@ if [ ! -e /var/www/html/concrete ]; then
 fi
 
 # If the configuration file is empty, restore the file from the backup in the image.
-if [ -f /etc/apache2/sites-avaolable/000-default.conf ]; then
+if [ -f /etc/apache2/sites-available/000-default.conf ]; then
     if [ "$(cat /etc/apache2/sites-available/000-default.conf)" = "" ]; then
         cp -f /tmp/conf_backup/000-default.conf /etc/apache2/sites-available/
-        echo "'/etc/apache2/sites-avaolable/000-default.conf' is restored."
+        echo "'/etc/apache2/sites-available/000-default.conf' is restored."
     fi
 fi
 
