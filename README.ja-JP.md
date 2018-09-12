@@ -6,6 +6,9 @@ MySQLコンテナ（MariaDBでもOK）と組み合わせてご利用ください
 
 [![Concrete5-logo](https://concrete5-japan.org/files/4413/8347/6810/concrete5_japan_banner.gif)](https://concrete5-japan.org/)
 
+[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
+
 ## サポートされるタグと`Dockerfile`のリンク一覧
 
 > ベースイメージ `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
@@ -75,8 +78,10 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 
 GitHubにて、docker-compose用のzipファイルを置いています。お好きな方をダウンロードし、解凍してお使いください。
 
-* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.zip)
-* [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.zip)
+* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.ja-JP.zip)
+* [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.ja-JP.zip)
+
+> コンテナ名やDockerネットワーク名、MySQLユーザー名やパスワードなどは必要に応じて変更してください。
 
 解凍したdocker-composeディレクトリに移動し、`docker-compose up`コマンドを実行して、Concrete5コンテナとMySQLコンテナを作成し、起動します。
 
@@ -152,5 +157,6 @@ docker-compose down
 
 ## リリースノート
 
-* 2018/09/10: 初版リリース。同一のミドルウェアのインストール部分を[独立したDockerイメージとして共通化](https://github.com/Nia-TN1012/docker-apache-php-cc5)しました。docker-compose側の一部ファイルを修正しました。
+* 2018/09/12: [`php70`全て] `niatn1012/apache-php-cc5`の修正に伴い、Dockerイメージを際ビルドしました。
+* 2018/09/10: 初版リリース。同一のミドルウェアのインストール部分を[`niatn1012/apache-php-cc5`](https://github.com/Nia-TN1012/docker-apache-php-cc5)として共通化しました。docker-compose側の一部ファイルを修正しました。
 * 2018/09/08: βバージョン作成
