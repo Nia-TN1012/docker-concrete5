@@ -9,7 +9,7 @@ services:
     networks:
       - cc5_net
     environment:
-      TZ: Asia/Tokyo
+      TZ: America/Los_Angeles
     ports:
       - 80:80
     volumes:
@@ -36,7 +36,7 @@ services:
       MYSQL_DATABASE: concrete5
       MYSQL_USER: cc5_user
       MYSQL_PASSWORD: cc5_pass
-      TZ: Asia/Tokyo
+      TZ: America/Los_Angeles
     ports:
       - 3306:3306
     volumes:
