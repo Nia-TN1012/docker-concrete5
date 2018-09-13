@@ -10,6 +10,7 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 
 
 [![Docker Automated build](https://img.shields.io/docker/automated/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Docker Build Status](https://img.shields.io/docker/build/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Docker Stars](https://img.shields.io/docker/stars/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
