@@ -1,9 +1,9 @@
 #
 # Concrete5 v8.4.2
-# Alpine Linux 3.8 + Apache2 + PHP7.2
+# Alpine Linux 3.8 + Apache2 + PHP7.x
 #
 
-FROM niatn1012/apache-php-cc5:php72-alpine
+FROM niatn1012/apache-php-cc5:php72-centos
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
