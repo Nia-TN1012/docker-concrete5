@@ -1,9 +1,9 @@
 #
 # Concrete5 v8.3.2
-# Debian stretch-slim + Apache2 + PHP5.6
+# Alpine Linux 3.8 + Apache2 + PHP7.2
 #
 
-FROM niatn1012/apache-php-cc5:php56
+FROM niatn1012/apache-php-cc5:php72-alpine
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 

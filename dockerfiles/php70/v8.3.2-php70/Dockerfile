@@ -8,7 +8,7 @@ FROM niatn1012/apache-php-cc5:php70
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
 # Download Concrete5 source files.
-ARG C5REV=104344
+ARG C5REV=100595
 RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/view/${C5REV}/ \
     && rm -f /var/www/html/index.html \
     && unzip -q /tmp/concrete5.zip -d /usr/src/ \
