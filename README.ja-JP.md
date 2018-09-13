@@ -1,4 +1,4 @@
-> Dockerイメージ `niatn1012/concrete5` のリリースを完了しました！
+> Dockerイメージ `niatn1012/concrete5` のリリースを完了しました！
 
 ## Docker用Concrete5 (Ver. 8.x)
 
