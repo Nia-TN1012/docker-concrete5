@@ -1,14 +1,14 @@
 #
-# Concrete5 v8.4.2
-# CentOS 7 + Apache2 + PHP7.2
+# Concrete5 v8.3.0
+# CentOS 7 + Apache2 + PHP5.6
 #
 
-FROM niatn1012/apache-php-cc5:php72-centos
+FROM niatn1012/apache-php-cc5:php56-centos
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
 # Download Concrete5 source files.
-ARG C5REV=105477
+ARG C5REV=99806
 RUN curl -sSL -o /tmp/concrete5.zip http://www.concrete5.org/download_file/-/view/${C5REV}/ \
     && rm -f /var/www/html/index.html \
     && unzip -q /tmp/concrete5.zip -d /usr/src/ \

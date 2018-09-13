@@ -1,9 +1,9 @@
 #
 # Concrete5 v8.4.2
-# CentOS 7 + Apache2 + PHP7.2
+# CentOS 7 + Apache2 + PHP7.1
 #
 
-FROM niatn1012/apache-php-cc5:php72-centos
+FROM niatn1012/apache-php-cc5:php71-centos
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
