@@ -22,26 +22,42 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 ## Supported tags and respective `Dockerfile` links
 
 > The base image `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+>
+> OS image: `Debian Stretch-slim`
 
-### Apache2 + PHP 7.0
+### Apache2 + PHP 7.x
 
 |Docker tag|Concrete5|Main middleware|Dockerfile link|
 |---|---|---|---|
-|`v8.4.2-php70`, `v8.4.2`, `v8.4-php70`, `v8.4`, `v8-php70`, `v8`, `php70`, **`latest`**|Ver. 8.4.2|Apache2, PHP7.0|[(v8.4.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.2-php70)|
-|`v8.4.1-php70`, `v8.4.1`|Ver. 8.4.1|Apache2, PHP7.0|[(v8.4.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.1-php70)|
-|`v8.4.0-php70`, `v8.4.0`|Ver. 8.4.0|Apache2, PHP7.0|[(v8.4.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.0-php70)|
-|`v8.3.2-php70`, `v8.3.2`, `v8.3-php70`, `v8.3`|Ver. 8.3.2|Apache2, PHP7.0|[(v8.3.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.3.2-php70)|
-|`v8.3.1-php70`, `v8.3.1`|Ver. 8.3.1|Apache2, PHP7.0|[(v8.3.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.3.1-php70)|
-|`v8.3.0-php70`, `v8.3.0`|Ver. 8.3.0|Apache2, PHP7.0|[(v8.3.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/v8.3.0-php70)|
-|`v8.2.1-php70`, `v8.2.1`, `v8.2-php70`, `v8.2`|Ver. 8.2.1|Apache2, PHP7.0|[(v8.2.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.2.1-php70)|
-|`v8.2.0-php70`, `v8.2.0`|Ver. 8.2.0|Apache2, PHP7.0|[(v8.2.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.2.0-php70)|
-|`v8.1.0-php70`, `v8.1.0`, `v8.1-php70`, `v8.1`|Ver. 8.1.0|Apache2, PHP7.0|[(v8.1.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.1.0-php70)|
-|`v8.0.3-php70`, `v8.0.3`, `v8.0-php70`, `v8.0`|Ver. 8.0.3|Apache2, PHP7.0|[(v8.0.3-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.3-php70)|
-|`v8.0.2-php70`, `v8.0.2`|Ver. 8.0.2|Apache2, PHP7.0|[(v8.0.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.2-php70)|
-|`v8.0.1-php70`, `v8.0.1`|Ver. 8.0.1|Apache2, PHP7.0|[(v8.0.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.1-php70)|
-|`v8.0.0-php70`, `v8.0.0`|Ver. 8.0.0|Apache2, PHP7.0|[(v8.0.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.0-php70)|
+|`v8.4.2-php72`, `v8.4.2`, `v8.4-php72`, `v8.4`, `v8-php72`, `v8`, `php72`, **`latest`**|Ver. 8.4.2|Apache2, PHP7.2|[(v8.4.2-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.2-php72)|
+|`v8.4.1-php72`, `v8.4.1`|Ver. 8.4.1|Apache2, PHP7.2|[(v8.4.1-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.1-php72)|
+|`v8.4.0-php72`, `v8.4.0`|Ver. 8.4.0|Apache2, PHP7.2|[(v8.4.0-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.0-php72)|
+|`v8.3.2-php72`, `v8.3.2`, `v8.3-php72`, `v8.3`|Ver. 8.3.2|Apache2, PHP7.2|[(v8.3.2-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.3.2-php72)|
+|`v8.2.1-php72`, `v8.2.1`, `v8.2-php72`, `v8.2`|Ver. 8.2.1|Apache2, PHP7.2|[(v8.2.1-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.2.1-php72)|
+|`v8.1.0-php72`, `v8.1.0`, `v8.1-php72`, `v8.1`|Ver. 8.1.0|Apache2, PHP7.2|[(v8.1.0-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.1.0-php72)|
+|`v8.0.3-php72`, `v8.0.3`, `v8.0-php72`, `v8.0`|Ver. 8.0.3|Apache2, PHP7.2|[(v8.0.3-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.0.3-php72)|
 
-### Apache2 + PHP 5.6
+|Docker tag|Concrete5|Main middleware|Dockerfile link|
+|---|---|---|---|
+|`v8.4.2-php71`, `v8.4-php71`, `v8-php71`, `php71`|Ver. 8.4.2|Apache2, PHP7.1|[(v8.4.2-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.2-php71)|
+|`v8.4.1-php71`|Ver. 8.4.1|Apache2, PHP7.1|[(v8.4.1-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.1-php71)|
+|`v8.4.0-php71`|Ver. 8.4.0|Apache2, PHP7.1|[(v8.4.0-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.0-php71)|
+|`v8.3.2-php71`, `v8.3-php71`|Ver. 8.3.2|Apache2, PHP7.1|[(v8.3.2-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.3.2-php71)|
+|`v8.2.1-php71`, `v8.2-php71`|Ver. 8.2.1|Apache2, PHP7.1|[(v8.2.1-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.2.1-php71)|
+|`v8.1.0-php71`, `v8.1-php71`|Ver. 8.1.0|Apache2, PHP7.1|[(v8.1.0-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.1.0-php71)|
+|`v8.0.3-php71`, `v8.0-php71`|Ver. 8.0.3|Apache2, PHP7.1|[(v8.0.3-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.0.3-php71)|
+
+|Docker tag|Concrete5|Main middleware|Dockerfile link|
+|---|---|---|---|
+|`v8.4.2-php70`, `v8.4-php70`, `v8-php70`, `php70`|Ver. 8.4.2|Apache2, PHP7.0|[(v8.4.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.2-php70)|
+|`v8.4.1-php70`|Ver. 8.4.1|Apache2, PHP7.0|[(v8.4.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.1-php70)|
+|`v8.4.0-php70`|Ver. 8.4.0|Apache2, PHP7.0|[(v8.4.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.0-php70)|
+|`v8.3.2-php70`, `v8.3-php70`|Ver. 8.3.2|Apache2, PHP7.0|[(v8.3.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.3.2-php70)|
+|`v8.2.1-php70`, `v8.2-php70`|Ver. 8.2.1|Apache2, PHP7.0|[(v8.2.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.2.1-php70)|
+|`v8.1.0-php70`, `v8.1-php70`|Ver. 8.1.0|Apache2, PHP7.0|[(v8.1.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.1.0-php70)|
+|`v8.0.3-php70`, `v8.0-php70`|Ver. 8.0.3|Apache2, PHP7.0|[(v8.0.3-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.3-php70)|
+
+### Apache2 + PHP 5.x
 
 |Docker tag|Concrete5|Main middleware|Dockerfile link|
 |---|---|---|---|
@@ -49,15 +65,9 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 |`v8.4.1-php56`|Ver. 8.4.1|Apache2, PHP5.6|[(v8.4.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.4.1-php56)|
 |`v8.4.0-php56`|Ver. 8.4.0|Apache2, PHP5.6|[(v8.4.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.4.0-php56)|
 |`v8.3.2-php56`, `v8.3-php56`|Ver. 8.3.2|Apache2, PHP5.6|[(v8.3.2-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.3.2-php56)|
-|`v8.3.1-php56`|Ver. 8.3.1|Apache2, PHP5.6|[(v8.3.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.3.1-php56)|
-|`v8.3.0-php56`|Ver. 8.3.0|Apache2, PHP5.6|[(v8.3.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.3.0-php56)|
 |`v8.2.1-php56`, `v8.2-php56`|Ver. 8.2.1|Apache2, PHP5.6|[(v8.2.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.2.1-php56)|
-|`v8.2.0-php56`|Ver. 8.2.0|Apache2, PHP5.6|[(v8.2.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.2.0-php56)|
 |`v8.1.0-php56`, `v8.1-php56`|Ver. 8.1.0|Apache2, PHP5.6|[(v8.1.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.1.0-php56)|
 |`v8.0.3-php56`, `v8.0-php56`|Ver. 8.0.3|Apache2, PHP5.6|[(v8.0.3-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.0.3-php56)|
-|`v8.0.2-php56`|Ver. 8.0.2|Apache2, PHP5.6|[(v8.0.2-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.0.2-php56)|
-|`v8.0.1-php56`|Ver. 8.0.1|Apache2, PHP5.6|[(v8.0.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.0.1-php56)|
-|`v8.0.0-php56`|Ver. 8.0.0|Apache2, PHP5.6|[(v8.0.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.0.0-php56)|
 
 ## Quick Start
 
