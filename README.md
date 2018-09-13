@@ -1,3 +1,5 @@
+> `niatn1012/concrete5` docker image has completed release!
+
 ## Concrete5 (Ver. 8.x) for Docker
 
 This repository is a Docker image of an open source CMS [**Concrete5**](https://www.concrete5.org/) (version 8.x) application container.
@@ -7,8 +9,14 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 [![Concrete5-logo](https://concrete5-japan.org/files/4413/8347/6810/concrete5_japan_banner.gif)](https://www.concrete5.org/)
 
 
-[![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Docker Automated build](https://img.shields.io/docker/automated/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
+[![Docker Stars](https://img.shields.io/docker/stars/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
+
+[![](https://images.microbadger.com/badges/version/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own image badge on microbadger.com")
+
 
 ## Supported tags and respective `Dockerfile` links
 
