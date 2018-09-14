@@ -15,15 +15,24 @@ Please use in conjunction with the MySQL container (it is also possible with Mar
 [![Docker Stars](https://img.shields.io/docker/stars/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
 
-[![](https://images.microbadger.com/badges/version/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/niatn1012/concrete5.svg)](https://microbadger.com/images/niatn1012/concrete5 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/niatn1012/concrete5:latest.svg)](https://microbadger.com/images/niatn1012/concrete5 "Get your own image badge on microbadger.com")
 
 
 ## Supported tags and respective `Dockerfile` links
 
-> The base image `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+* The base image `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+
+> This repository supports Docker tags consisting of the following combinations.
+> * OS image: `Debian stretch-slim`
+> * Middleware: `Apache2` + [` PHP5.6`, `PHP7.0`,` PHP7.1`, `PHP7.2`]
+> * Concrete5: All the latest minor versions and the latest build version among the past minor versions
 >
-> OS image: `Debian Stretch-slim`
+> Also, there are Dockerfiles of other combinations (eg OS images such as CentOS and Concrete5 ver. 8.0.0 etc) in the GitHub repository. You can download them and create a Docker image with `docker build` command.
+>
+> ```bash
+> docker build -t concrete5:v8.0.0-php72-centos ./php72-centos/v8.0.0-php72-centos/
+> ```
 
 ### Apache2 + PHP 7.x
 
@@ -177,6 +186,7 @@ Please be understanding of this beforehand.
 
 ## Release Notes
 
+* 2018/09/14: Add new Docker images. Along with this, organized supported tags.
 * 2018/09/12: [All][BugFix] Corrected the docker entry-point shell scripts.
 * 2018/09/12: [All `php70`][BugFix] Rebuilt the images because fix base image `niatn1012/apache-php-cc5`.
 * 2018/09/10: First release. Made the same middleware installation part common as `niatn1012/apache-php-cc5`. Corrected a partial file on the docker-compose side.

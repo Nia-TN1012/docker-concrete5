@@ -14,14 +14,24 @@ MySQLコンテナ（MariaDBでもOK）と組み合わせてご利用ください
 [![Docker Stars](https://img.shields.io/docker/stars/niatn1012/concrete5.svg)](https://hub.docker.com/r/niatn1012/concrete5/)
 [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg)](https://github.com/Nia-TN1012/docker-concrete5/blob/master/LICENSE)
 
-[![](https://images.microbadger.com/badges/version/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/niatn1012/concrete5:v8.4.2-php70.svg)](https://microbadger.com/images/niatn1012/concrete5:v8.4.2-php70 "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/niatn1012/concrete5.svg)](https://microbadger.com/images/niatn1012/concrete5 "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/niatn1012/concrete5.svg)](https://microbadger.com/images/niatn1012/concrete5 "Get your own image badge on microbadger.com")
 
 ## サポートされるタグと`Dockerfile`のリンク一覧
 
-> ベースイメージ `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+* ベースイメージ `niatn1012/apache-php-cc5`: [Docker Hub](https://hub.docker.com/r/niatn1012/apache-php-cc5/) / [GitHub](https://github.com/Nia-TN1012/docker-apache-php-cc5)
+
+> このリポジトリでは、以下の組み合わせからなるDockerタグをサポートしています。
+> * OSイメージ: `Debian stretch-slim`
+> * ミドルウェア: `Apache2` + [`PHP5.6`, `PHP7.0`,`PHP7.1`,`PHP7.2`]
+> * Concrete5: 最新のマイナーバージョン全てと、過去のマイナーバージョンの中で最新のビルドバージョン
 >
-> OSイメージ: `Debian Stretch-slim`
+> また、GitHubのリポジトリ に他の組み合わせ（例: OSイメージがCentOSやConcrete5 ver. 8.0.0など）のDockerfileがございます。それらをダウンロードし、`docker build`コマンドでDokcerイメージを作成することができます。
+>
+> ```bash
+> docker build -t concrete5:v8.0.0-php72-centos ./php72-centos/v8.0.0-php72-centos/
+> ```
+
 ### Apache2 + PHP 7.x
 
 |Dockerタグ|Concrete5|主なミドルウェア|Dockerfileのリンク|
@@ -174,6 +184,7 @@ docker-compose down
 
 ## リリースノート
 
+* 2018/09/14: 新たにDockerイメージを追加しました。これに伴い、サポートされるタグを整理しました。
 * 2018/09/12: [全て][バグ修正] Dockerのエントリーポイントのシェルスクリプトを修正しました。
 * 2018/09/12: [`php70`全て][バグ修正] `niatn1012/apache-php-cc5`の修正に伴い、Dockerイメージを再ビルドしました。
 * 2018/09/10: 初版リリース。同一のミドルウェアのインストール部分を[`niatn1012/apache-php-cc5`](https://github.com/Nia-TN1012/docker-apache-php-cc5)として共通化しました。docker-compose側の一部ファイルを修正しました。
