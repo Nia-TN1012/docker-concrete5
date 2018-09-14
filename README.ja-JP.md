@@ -103,8 +103,10 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 
 ### B. `docker-compose`を使って、Concrete5コンテナとMySQLコンテナをまとめて起動する（オススメ）
 
-GitHubにて、docker-compose用のzipファイルを置いています。お好きな方をダウンロードし、解凍してお使いください。
+GitHubにて、docker-compose用のzipファイルを置いています。お好きなバージョンをダウンロードし、解凍してお使いください。
 
+* [v8-php72](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php72.ja-JP/concrete5-v8-php72-docker-compose.ja-JP.zip)
+* [v8-php71](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php71.ja-JP/concrete5-v8-php71-docker-compose.ja-JP.zip)
 * [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70.ja-JP/concrete5-v8-php70-docker-compose.ja-JP.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56.ja-JP/concrete5-v8-php56-docker-compose.ja-JP.zip)
 

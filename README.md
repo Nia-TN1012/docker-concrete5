@@ -105,8 +105,10 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 
 ### B. Using `docker-compose` to start up Concrete5 container and MySQL container at once (recommended)
 
-The docker-compose zip file is in GitHub. Download and unzip it.
+The docker-compose zip file is in GitHub. Download your favorite version and unzip it.
 
+* [v8-php72](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php72/concrete5-v8-php72-docker-compose.zip)
+* [v8-php71](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php71/concrete5-v8-php71-docker-compose.zip)
 * [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70/concrete5-v8-php70-docker-compose.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56/concrete5-v8-php56-docker-compose.zip)
 

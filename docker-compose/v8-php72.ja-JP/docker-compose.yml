@@ -1,0 +1,54 @@
+# Concrete5用docker-compose
+
+version: "3"
+services:
+  # Apache 2 + PHP 7.2 + Concrete5 8.x (v8-php72)
+  app:
+    image: niatn1012/concrete5:v8-php72
+    container_name: cc5_app
+    networks:
+      - cc5_net
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 80:80
+    volumes:
+      # 設定ファイル
+      # Note: 設定ファイルを初期化したい時は、'000-default.conf'および'php.ini'の中身を空にし、
+      #       `docker-compose restart`コマンドを実行します。
+      - ./app/config/000-default.conf:/etc/apache2/sites-avaolable/000-default.conf
+      - ./app/config/php.ini:/etc/php/7.2/apache2/php.ini
+      # Concrete5のソースファイル
+      - ./app/data:/var/www/html
+      # Apacheのログ
+      - ./app/logs:/var/log/apache2
+  # MySQL
+  db:
+    image: mysql:5.6
+    # Note: Concrete5のインストール画面にて、MySQLのサーバー名入力欄には、
+    #       ここで設定したコンテナ名を入力します。
+    container_name: cc5_db
+    networks:
+      - cc5_net
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      # Concrete5で使用する、MySQLユーザー名、パスワード、データベース名を設定します。
+      # Note: ここで設定したMySQLユーザー名は、コンテナの初回起動時に添付のinit.shにある
+      #       GRANTコマンドにより、全権限が付与されます。
+      MYSQL_DATABASE: concrete5
+      MYSQL_USER: cc5_user
+      MYSQL_PASSWORD: cc5_pass
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
+    volumes:
+      # 設定ファイル
+      - ./db/config/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      # 初回起動時に実行するシェルスクリプト
+      - ./db/init/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+      # MySQLのデータファイル
+      - ./db/data:/var/lib/mysql
+
+networks:
+  cc5_net:
+    driver: bridge

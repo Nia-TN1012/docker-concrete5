@@ -1,0 +1,52 @@
+# Concrete5 docker composer
+
+version: "3"
+services:
+  # Apache 2 + PHP 7.2 + Concrete5 8.x (v8-php72)
+  app:
+    image: niatn1012/concrete5:v8-php72
+    container_name: cc5_app
+    networks:
+      - cc5_net
+    environment:
+      TZ: America/Los_Angeles
+    ports:
+      - 80:80
+    volumes:
+      # Configration files
+      # Note: To initialize the configuration files, empty the contents of '000-default.conf', 'php.ini' 
+      #       and execute `docker-compose restart` command.
+      - ./app/config/000-default.conf:/etc/apache2/sites-available/000-default.conf
+      - ./app/config/php.ini:/etc/php/7.2/apache2/php.ini
+      # Concrete5 source files
+      - ./app/data:/var/www/html
+      # Apache logs
+      - ./app/logs:/var/log/apache2
+  # MySQL
+  db:
+    image: mysql:5.6
+    # Note: Specify this container name as the server name of MySQL
+    #       on the installation screen of Concrete5.
+    container_name: cc5_db
+    networks:
+      - cc5_net
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      # Set the database name, user, password of MySQL to be used with Concrete5.
+      MYSQL_DATABASE: concrete5
+      MYSQL_USER: cc5_user
+      MYSQL_PASSWORD: cc5_pass
+      TZ: America/Los_Angeles
+    ports:
+      - 3306:3306
+    volumes:
+      # Configration file
+      - ./db/config/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      # Initialization script
+      - ./db/init/init.sh:/docker-entrypoint-initdb.d/init.sh:ro
+      # MySQL data
+      - ./db/data:/var/lib/mysql
+
+networks:
+  cc5_net:
+    driver: bridge
