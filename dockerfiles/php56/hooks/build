@@ -2,7 +2,7 @@
 
 LATEST_C5REV_NUM=109615
 
-case "${CACHE_TAG}" in
+case "${DOCKER_TAG}" in
     "v8.5.1-php56" ) C5REV_NUM=${LATEST_C5REV_NUM} ;;
     "v8.5.0-php56" ) C5REV_NUM=109116 ;;
     "v8.4.2-php56" ) C5REV_NUM=105477 ;;

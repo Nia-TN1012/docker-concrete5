@@ -1,6 +1,6 @@
 #!/bin/bash
 
-case "${CACHE_TAG}" in
+case "${DOCKER_TAG}" in
     "v8.5.1-php72" ) VER_LIST="v8.5.1 v8.5-php72 v8.5 v8-php72 v8 php72 latest" ;;
     "v8.5.0-php72" ) VER_LIST="v8.5.0" ;;
 	"v8.4.2-php72" ) VER_LIST="v8.4.2 v8.4-php72 v8.4" ;;
