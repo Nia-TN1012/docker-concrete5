@@ -14,9 +14,9 @@ services:
       - 80:80
     volumes:
       # 設定ファイル
-      # Note: 設定ファイルを初期化したい時は、'000-default.conf'および'php.ini'の中身を空にし、
+      # Note: 設定ファイルを初期化したい時は、'concrete5.conf'および'php.ini'の中身を空にし、
       #       `docker-compose restart`コマンドを実行します。
-      - ./app/config/000-default.conf:/etc/apache2/sites-avaolable/000-default.conf
+      - ./app/config/concrete5.conf:/etc/apache2/sites-avaolable/000-default.conf
       - ./app/config/php.ini:/etc/php/7.2/apache2/php.ini
       # Concrete5のソースファイル
       - ./app/data:/var/www/html
