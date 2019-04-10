@@ -1,0 +1,24 @@
+#!/bin/bash
+
+LATEST_C5REV_NUM=109615
+
+case "${CACHE_TAG}" in
+    "v8.5.1-php56-centos" ) C5REV_NUM=${LATEST_C5REV_NUM} ;;
+    "v8.5.0-php56-centos" ) C5REV_NUM=109116 ;;
+    "v8.4.2-php56-centos" ) C5REV_NUM=105477 ;;
+    "v8.4.1-php56-centos" ) C5REV_NUM=105022 ;;
+    "v8.4.0-php56-centos" ) C5REV_NUM=104344 ;;
+    "v8.3.2-php56-centos" ) C5REV_NUM=100595 ;;
+    "v8.3.1-php56-centos" ) C5REV_NUM=99963 ;;
+    "v8.3.0-php56-centos" ) C5REV_NUM=99806 ;;
+    "v8.2.1-php56-centos" ) C5REV_NUM=96959 ;;
+    "v8.2.0-php56-centos" ) C5REV_NUM=96765 ;;
+    "v8.1.0-php56-centos" ) C5REV_NUM=93797 ;;
+    "v8.0.3-php56-centos" ) C5REV_NUM=93074 ;;
+    "v8.0.2-php56-centos" ) C5REV_NUM=92910 ;;
+    "v8.0.1-php56-centos" ) C5REV_NUM=92834 ;;
+    "v8.0.0-php56-centos" ) C5REV_NUM=92663 ;;
+     * ) C5REV_NUM=${LATEST_C5REV_NUM} ;;
+esac
+
+docker build --build-arg C5REV=${C5REV_NUM} ${DOCKERFILE_PATH_ARG} -t $IMAGE_NAME .

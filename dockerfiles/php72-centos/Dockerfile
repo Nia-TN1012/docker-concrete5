@@ -1,9 +1,9 @@
 #
 # Concrete5 v8.x.x
-# Debian stretch-slim + Apache2 + PHP5.6
+# CentOS 7 + Apache2 + PHP7.2
 #
 
-FROM niatn1012/apache-php-cc5:php56
+FROM niatn1012/apache-php-cc5:php72-centos
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 

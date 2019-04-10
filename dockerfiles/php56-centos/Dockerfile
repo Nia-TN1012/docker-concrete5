@@ -1,9 +1,9 @@
 #
 # Concrete5 v8.x.x
-# Debian stretch-slim + Apache2 + PHP5.6
+# CentOS 7 + Apache2 + PHP5.6
 #
 
-FROM niatn1012/apache-php-cc5:php56
+FROM niatn1012/apache-php-cc5:php56-centos
 
 LABEL maintainer "Nia Tomonaka (@nia_tn1012)"
 
@@ -24,5 +24,5 @@ COPY docker-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 
-# Expose 80 (HTTP) ports.
-EXPOSE 80
+# Expose 80 (HTTP) and 443 (HTTPS) ports.
+EXPOSE 80 443
