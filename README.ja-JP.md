@@ -23,58 +23,43 @@ MySQLコンテナ（MariaDBでもOK）と組み合わせてご利用ください
 
 > このリポジトリでは、以下の組み合わせからなるDockerタグをサポートしています。
 > * OSイメージ: `Debian stretch-slim`
-> * ミドルウェア: `Apache2` + [`PHP5.6`, `PHP7.0`,`PHP7.1`,`PHP7.2`]
+> * ミドルウェア: `Apache2` + [`PHP5.6`,`PHP7.2`]
 > * Concrete5: 最新のマイナーバージョン全てと、過去のマイナーバージョンの中で最新のビルドバージョン
 >
 > また、GitHubのリポジトリ に他の組み合わせ（例: OSイメージがCentOSやConcrete5 ver. 8.0.0など）のDockerfileがございます。それらをダウンロードし、`docker build`コマンドでDokcerイメージを作成することができます。
 >
 > ```bash
-> docker build -t concrete5:v8.0.0-php72-centos ./php72-centos/v8.0.0-php72-centos/
+> docker build --build-args C5REV=92663 -t concrete5:v8.0.0-php72-centos ./php72-centos/
 > ```
+>> 引数 `C5REV` はConcrete5のリビジョンです。 リビジョン番号を調べる場合、[`hooks/build`](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/hooks/build)または、Concrete5のダウンロードアーカイブのページを参照してください。
 
-### Apache2 + PHP 7.x
+### Apache2 + PHP 7.2
 
-|Dockerタグ|Concrete5|主なミドルウェア|Dockerfileのリンク|
-|---|---|---|---|
-|`v8.4.2-php72`, `v8.4.2`, `v8.4-php72`, `v8.4`, `v8-php72`, `v8`, `php72`, **`latest`**|Ver. 8.4.2|Apache2, PHP7.2|[(v8.4.2-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.2-php72)|
-|`v8.4.1-php72`, `v8.4.1`|Ver. 8.4.1|Apache2, PHP7.2|[(v8.4.1-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.1-php72)|
-|`v8.4.0-php72`, `v8.4.0`|Ver. 8.4.0|Apache2, PHP7.2|[(v8.4.0-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.4.0-php72)|
-|`v8.3.2-php72`, `v8.3.2`, `v8.3-php72`, `v8.3`|Ver. 8.3.2|Apache2, PHP7.2|[(v8.3.2-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.3.2-php72)|
-|`v8.2.1-php72`, `v8.2.1`, `v8.2-php72`, `v8.2`|Ver. 8.2.1|Apache2, PHP7.2|[(v8.2.1-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.2.1-php72)|
-|`v8.1.0-php72`, `v8.1.0`, `v8.1-php72`, `v8.1`|Ver. 8.1.0|Apache2, PHP7.2|[(v8.1.0-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.1.0-php72)|
-|`v8.0.3-php72`, `v8.0.3`, `v8.0-php72`, `v8.0`|Ver. 8.0.3|Apache2, PHP7.2|[(v8.0.3-php72)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72/v8.0.3-php72)|
+[Dockerfileのリンク](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php72)
 
-|Dockerタグ|Concrete5|主なミドルウェア|Dockerfileのリンク|
-|---|---|---|---|
-|`v8.4.2-php71`, `v8.4-php71`, `v8-php71`, `php71`|Ver. 8.4.2|Apache2, PHP7.1|[(v8.4.2-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.2-php71)|
-|`v8.4.1-php71`|Ver. 8.4.1|Apache2, PHP7.1|[(v8.4.1-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.1-php71)|
-|`v8.4.0-php71`|Ver. 8.4.0|Apache2, PHP7.1|[(v8.4.0-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.4.0-php71)|
-|`v8.3.2-php71`, `v8.3-php71`|Ver. 8.3.2|Apache2, PHP7.1|[(v8.3.2-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.3.2-php71)|
-|`v8.2.1-php71`, `v8.2-php71`|Ver. 8.2.1|Apache2, PHP7.1|[(v8.2.1-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.2.1-php71)|
-|`v8.1.0-php71`, `v8.1-php71`|Ver. 8.1.0|Apache2, PHP7.1|[(v8.1.0-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.1.0-php71)|
-|`v8.0.3-php71`, `v8.0-php71`|Ver. 8.0.3|Apache2, PHP7.1|[(v8.0.3-php71)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php71/v8.0.3-php71)|
+|Dockerタグ|Concrete5のバージョン|
+|---|---|
+|`v8.5.1-php72`, `v8.5.1`, `v8.5-php72`, `v8.5`, `v8-php72`, `v8`, `php72`, **`latest`**|8.5.1|
+|`v8.5.0-php72`, `v8.5.0`|8.5.0|
+|`v8.4.2-php72`, `v8.4.2`, `v8.4-php72`, `v8.4`|8.4.2|
+|`v8.3.2-php72`, `v8.3.2`, `v8.3-php72`, `v8.3`|8.3.2|
+|`v8.2.1-php72`, `v8.2.1`, `v8.2-php72`, `v8.2`|8.2.1|
+|`v8.1.0-php72`, `v8.1.0`, `v8.1-php72`, `v8.1`|8.1.0|
+|`v8.0.3-php72`, `v8.0.3`, `v8.0-php72`, `v8.0`|8.0.3|
 
-|Dockerタグ|Concrete5|主なミドルウェア|Dockerfileのリンク|
-|---|---|---|---|
-|`v8.4.2-php70`, `v8.4-php70`, `v8-php70`, `php70`|Ver. 8.4.2|Apache2, PHP7.0|[(v8.4.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.2-php70)|
-|`v8.4.1-php70`|Ver. 8.4.1|Apache2, PHP7.0|[(v8.4.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.1-php70)|
-|`v8.4.0-php70`|Ver. 8.4.0|Apache2, PHP7.0|[(v8.4.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.4.0-php70)|
-|`v8.3.2-php70`, `v8.3-php70`|Ver. 8.3.2|Apache2, PHP7.0|[(v8.3.2-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.3.2-php70)|
-|`v8.2.1-php70`, `v8.2-php70`|Ver. 8.2.1|Apache2, PHP7.0|[(v8.2.1-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.2.1-php70)|
-|`v8.1.0-php70`, `v8.1-php70`|Ver. 8.1.0|Apache2, PHP7.0|[(v8.1.0-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.1.0-php70)|
-|`v8.0.3-php70`, `v8.0-php70`|Ver. 8.0.3|Apache2, PHP7.0|[(v8.0.3-php70)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php70/v8.0.3-php70)|
+### Apache2 + PHP 5.6
 
-### Apache2 + PHP 5.x
+[Dockerfileのリンク](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56)
 
-|Dockerタグ|Concrete5|主なミドルウェア|Dockerfileのリンク|
-|---|---|---|---|
-|`v8.4.2-php56`, `v8.4-php56`, `v8-php56`, `php56`|Ver. 8.4.2|Apache2, PHP5.6|[(v8.4.2-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.4.2-php56)|
-|`v8.4.1-php56`|Ver. 8.4.1|Apache2, PHP5.6|[(v8.4.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.4.1-php56)|
-|`v8.4.0-php56`|Ver. 8.4.0|Apache2, PHP5.6|[(v8.4.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.4.0-php56)|
-|`v8.3.2-php56`, `v8.3-php56`|Ver. 8.3.2|Apache2, PHP5.6|[(v8.3.2-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.3.2-php56)|
-|`v8.2.1-php56`, `v8.2-php56`|Ver. 8.2.1|Apache2, PHP5.6|[(v8.2.1-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.2.1-php56)|
-|`v8.1.0-php56`, `v8.1-php56`|Ver. 8.1.0|Apache2, PHP5.6|[(v8.1.0-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.1.0-php56)|
-|`v8.0.3-php56`, `v8.0-php56`|Ver. 8.0.3|Apache2, PHP5.6|[(v8.0.3-php56)](https://github.com/Nia-TN1012/docker-concrete5/tree/master/dockerfiles/php56/v8.0.3-php56)|
+|Dockerタグ|Concrete5のバージョン|
+|---|---|
+|`v8.5.1-php56`, `v8.5-php56`, `v8-php56`, `php56`|8.5.1|
+|`v8.5.0-php56`|8.5.0|
+|`v8.4.2-php56`, `v8.4-php56`|8.4.2|
+|`v8.3.2-php56`, `v8.3-php56`|8.3.2|
+|`v8.2.1-php56`, `v8.2-php56`|8.2.1|
+|`v8.1.0-php56`, `v8.1-php56`|8.1.0|
+|`v8.0.3-php56`, `v8.0-php56`|8.0.3|
 
 ## クイックスタート
 
@@ -106,8 +91,6 @@ docker run --name cc5_app --link cc5_db:cc5_db -p 80:80 -d niatn1012/concrete5
 GitHubにて、docker-compose用のzipファイルを置いています。お好きなバージョンをダウンロードし、解凍してお使いください。
 
 * [v8-php72](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php72.ja-JP/concrete5-v8-php72-docker-compose.ja-JP.zip)
-* [v8-php71](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php71.ja-JP/concrete5-v8-php71-docker-compose.ja-JP.zip)
-* [v8-php70](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php70.ja-JP/concrete5-v8-php70-docker-compose.ja-JP.zip)
 * [v8-php56](https://github.com/Nia-TN1012/docker-concrete5/blob/master/docker-compose/v8-php56.ja-JP/concrete5-v8-php56-docker-compose.ja-JP.zip)
 
 > `docker-compose.yml`にある、コンテナ名やDockerネットワーク名、MySQLユーザー名やパスワードなどは必要に応じて変更してください。
@@ -186,6 +169,7 @@ docker-compose down
 
 ## リリースノート
 
+* 2019/04/10: 新たにDockerイメージを追加しました。これに伴い、サポートされるタグを整理しました。
 * 2018/09/14: 新たにDockerイメージを追加しました。これに伴い、サポートされるタグを整理しました。
 * 2018/09/12: [全て][バグ修正] Dockerのエントリーポイントのシェルスクリプトを修正しました。
 * 2018/09/12: [`php70`全て][バグ修正] `niatn1012/apache-php-cc5`の修正に伴い、Dockerイメージを再ビルドしました。
