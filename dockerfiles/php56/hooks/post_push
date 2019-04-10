@@ -11,6 +11,8 @@ case "${DOCKER_TAG}" in
 esac
 
 for TAG in ${VER_LIST}; do
+    echo "Tagging ${IMAGE_NAME} as ${DOCKER_REPO}:${TAG} ..."
 	docker tag ${IMAGE_NAME} ${DOCKER_REPO}:${TAG}
+    echo "Pushing ${DOCKER_REPO}:${TAG} ..."
 	docker push ${DOCKER_REPO}:${TAG}
 done

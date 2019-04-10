@@ -1,0 +1,27 @@
+#!/bin/bash
+
+case "${DOCKER_TAG}" in
+    "v8.5.1-php72-alpine" ) VER_LIST="v8.5.1-alpine v8.5-php72-alpine v8.5-alpine v8-php72-alpine v8-alpine php72-alpine" ;;
+    "v8.5.0-php72-alpine" ) VER_LIST="v8.5.0-alpine" ;;
+	"v8.4.2-php72-alpine" ) VER_LIST="v8.4.2-alpine v8.4-php72-alpine v8.4-alpine" ;;
+    "v8.4.1-php72-alpine" ) VER_LIST="v8.4.1-alpine" ;;
+    "v8.4.0-php72-alpine" ) VER_LIST="v8.4.0-alpine" ;;
+    "v8.3.2-php72-alpine" ) VER_LIST="v8.3.2-alpine v8.3-php72-alpine v8.3-alpine" ;;
+    "v8.3.1-php72-alpine" ) VER_LIST="v8.3.1-alpine" ;;
+    "v8.3.0-php72-alpine" ) VER_LIST="v8.3.0-alpine" ;;
+    "v8.2.1-php72-alpine" ) VER_LIST="v8.2.1-alpine v8.2-php72-alpine v8.2-alpine" ;;
+    "v8.2.0-php72-alpine" ) VER_LIST="v8.2.0-alpine" ;;
+    "v8.1.0-php72-alpine" ) VER_LIST="v8.1.0-alpine v8.1-php72-alpine v8.1-alpine" ;;
+    "v8.0.3-php72-alpine" ) VER_LIST="v8.0.3-alpine v8.0-php72-alpine v8.0-alpine" ;;
+    "v8.0.2-php72-alpine" ) VER_LIST="v8.0.2-alpine" ;;
+    "v8.0.1-php72-alpine" ) VER_LIST="v8.0.1-alpine" ;;
+    "v8.0.0-php72-alpine" ) VER_LIST="v8.0.0-alpine" ;;
+     * ) VER_LIST="" ;;
+esac
+
+for TAG in ${VER_LIST}; do
+	echo "Tagging ${IMAGE_NAME} as ${DOCKER_REPO}:${TAG} ..."
+	docker tag ${IMAGE_NAME} ${DOCKER_REPO}:${TAG}
+    echo "Pushing ${DOCKER_REPO}:${TAG} ..."
+	docker push ${DOCKER_REPO}:${TAG}
+done
