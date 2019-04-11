@@ -4,7 +4,7 @@ echo "Starting ..."
 
 # Initialization: Copy Concrete5 source files to www root directory.
 if [ ! -e /var/www/html/concrete ]; then
-    cp -a /usr/src/concrete5/* /var/www/html/
+    cp -a /usr/src/concrete5/. /var/www/html/
     echo "Initialized!"
 fi
 
