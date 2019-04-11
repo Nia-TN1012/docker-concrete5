@@ -172,6 +172,7 @@ Please be understanding of this beforehand.
 
 ## Release Notes
 
+* 2019/04/11: [All][BugFix] Corrected the docker entry-point shell scripts.
 * 2019/04/10: Add new Docker images. Along with this, organized supported tags.
 * 2018/09/14: Add new Docker images. Along with this, organized supported tags.
 * 2018/09/12: [All][BugFix] Corrected the docker entry-point shell scripts.
